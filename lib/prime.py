@@ -1,17 +1,25 @@
+import math
+
 class prime:
 
     def getListBelow(self, ceiling):
-        list = []
+        primeList = []
         for i in range(2, ceiling):
             if self.__isPrime(i):
-                list.append(i)
-        return list
+                primeList.append(i)
+        return primeList
 
     def __isPrime(self, number):
-        divisors = 0;
-        for i in range(2, number):
-            if number % i == 0:
-                divisors += 1
-            if divisors > 0:
-                return False
-        return divisors == 0
+        if number <= 1:
+            return False
+        elif number == 2:
+            return True
+        else:
+            if number % 2 == 0:
+                return False 
+
+            upperLimit = int(math.ceil(math.sqrt(number))) + 1
+            for i in range(3, upperLimit, 2):
+                if number % i == 0:
+                    return False
+        return True

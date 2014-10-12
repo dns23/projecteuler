@@ -1,4 +1,6 @@
 language: python
 python:
   - "2.7"
-script: python verify.py
+script:
+  - python unittestsuite.py
+  - python verify.py
