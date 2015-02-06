@@ -17,5 +17,10 @@ CONST_CMAKE_LIBARY_DIR=$(CONST_ROOT_DIR)/lib/buildsystem/cmake
 
 #
 # Create targets
-$(eval $(call BUILD_MATRIX_FCN,1,x86_64,gcc))
-$(eval $(call BUILD_MATRIX_FCN,1,x86_64,clang))
+dirs=$(shell ls $(CONST_ROOT_DIR)/problems)
+support_compilers=gcc clang
+support_machine_archs=x86_64 cortex_m3
+
+$(foreach dir,$(dirs), \
+    $(foreach arch,$(support_machine_archs), \
+        $(foreach compiler,$(support_compilers), $(eval $(call BUILD_MATRIX_FCN,$(dir),$(arch),$(compiler))))))
