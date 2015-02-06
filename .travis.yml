@@ -1,6 +1,4 @@
-language: python
-python:
-  - "2.7"
+language: c
 script:
-  - python unittestsuite.py
-  - python verify.py
+  - make build_
+  - make install_
