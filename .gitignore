@@ -1,4 +1,9 @@
+# Ignore following files
 *.pyc
 .project
 .cproject
 .pydevproject
+
+# Ignore following dirs
+_bld/
+_install/
