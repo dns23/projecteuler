@@ -1,11 +1,7 @@
 project(PROBLEM_1)
+include(${CONST_CMAKE_LIBARY_DIR}/startup.cmake)
+cmake_minimum_required(VERSION ${CONST_CMAKE_MIN_VERSION_REQUIRED})
 
-cmake_minimum_required(VERSION 2.8)
+include(problem_target_helpers)
 
-set(CMAKE_C_FLAGS "-Werror -Wall -Wextra -Wno-unused-parameter -Wundef -std=c99")
-
-add_executable(problem_1
-    main.c
-)
-
-install(TARGETS problem_1 DESTINATION ${CONST_INSTALL_DIR})
+add_problem(1 "${CMAKE_CURRENT_LIST_DIR}/main.c")

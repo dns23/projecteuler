@@ -31,8 +31,9 @@ $$($(1)_$(2)_$(3)_BUILD_DIR)/Makefile:
 	cd $$($(1)_$(2)_$(3)_BUILD_DIR) && cmake \
       -D CMAKE_BUILD_TYPE=release \
       -D CMAKE_TOOLCHAIN_FILE=$(CONST_CMAKE_LIBARY_DIR)/toolchains/$(3).cmake \
+      -D CONST_CMAKE_LIBARY_DIR=$(CONST_CMAKE_LIBARY_DIR) \
       -D CONST_INSTALL_DIR=$$($(1)_$(2)_$(3)_INSTALL_DIR) \
-      -G "Eclipse CDT4 - Unix Makefiles" \
+      -G "Unix Makefiles" \
       $$($(1)_$(2)_$(3)_SOURCE_DIR)
 
 #

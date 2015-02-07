@@ -19,7 +19,7 @@ CONST_CMAKE_LIBARY_DIR=$(CONST_ROOT_DIR)/lib/buildsystem/cmake
 # Create targets
 dirs=$(shell ls $(CONST_ROOT_DIR)/problems)
 support_compilers=gcc clang
-support_machine_archs=x86_64 cortex_m3
+support_machine_archs=x86_64
 
 $(foreach dir,$(dirs), \
     $(foreach arch,$(support_machine_archs), \
