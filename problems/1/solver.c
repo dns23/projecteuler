@@ -11,8 +11,10 @@ uint32_t solver(void)
     for (i = 3; i < upper_limit; i+=3) {
         sum += i;
     }
-    for (i = 5; i < upper_limit && i % 3 > 0; i+=5) {
-        sum += i;
+    for (i = 5; i < upper_limit; i+=5) {
+        if (i % 3 > 0) {
+            sum += i;
+        }
     }
     return sum;
 }
