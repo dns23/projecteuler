@@ -8,7 +8,7 @@ cmake_minimum_required(VERSION ${CONST_CMAKE_MIN_VERSION_REQUIRED})
 # Specific includes for this target
 include(target_helpers)
 
-add_problem(1
+add_problem(
     "${CMAKE_CURRENT_LIST_DIR}/solver.c"
     "${CONST_INSTALL_DIR}"
     "pe_solver"

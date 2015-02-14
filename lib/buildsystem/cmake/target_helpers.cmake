@@ -1,12 +1,13 @@
 
 function(add_problem
-            PROBLEM_NUMBER
             SRC_FILES
             INCLUDE_DIRS
             TARGET_LINKS
             DEPENDENCIES)
 
     set(CMAKE_C_FLAGS "-Werror -Wall -Wextra -Wno-unused-parameter -Wundef -std=c99")
+
+    get_filename_component(PROBLEM_NUMBER "${CMAKE_CURRENT_LIST_DIR}" NAME)
     set(TARGET_NAME "problem_${PROBLEM_NUMBER}")
 
     include_directories(${INCLUDE_DIRS})
