@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <pe_solver_instance.h>
 
-int main() {
+uint32_t solver(void)
+{
     const uint32_t upper_limit=1000;
     uint32_t sum = 0;
     uint32_t i = 0;
@@ -12,5 +14,8 @@ int main() {
     for (i = 5; i < upper_limit && i % 3 > 0; i+=5) {
         sum += i;
     }
-    printf("sum %d\n", sum);
+    return sum;
 }
+
+static PESolverObject problemSolver = {(uint32_t) 1, solver};
+PESolverObject *const peSolverInstance = &problemSolver;
