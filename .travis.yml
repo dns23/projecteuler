@@ -1,18 +1,7 @@
 language: c
 
-before_install:
-  - sudo apt-get install ccache -y
-  - export CCACHE_DIR=$HOME/.ccache
-  - export PATH=/usr/lib/ccache:$PATH
-  - sudo mkdir -p $CCACHE_DIR
-
 script:
   - make all
 
-after_script:
-  - ccache -s
-
 cache:
   apt: true
-  directories:
-    - $HOME/.ccache
